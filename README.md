@@ -1,16 +1,10 @@
 # News search's app
 
-News search's app is an app created in React with CRA (create-react-app). This project includes the following technologies:
-
-* [React](https://reactjs.org/)
-* [TypeScript](https://www.typescriptlang.org/docs/)
-* [Axios](https://www.npmjs.com/package/axios)
-* [Bootstrap 4](https://react-bootstrap.github.io/)
-* [Formik](https://formik.org/docs/tutorial)
+Lets start!:
 
 To install all the dependencies you must run:
 
-### `yarn` or `npm install`
+### `yarn install` or `npm install`
 
 ## Available Scripts
 
@@ -50,19 +44,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Configuration of the environment
-
-> Project Dependency Versions at the time 👇
-
-```json
-  "react": "^16.7.0",
-  "react-dom": "^16.7.0",
-  "react-scripts": "2.1.3",
-  "typescript": "^3.2.2"
-  "tslint": "^5.12.0",
-  "tslint-config-prettier": "^1.17.0",
-  "tslint-plugin-prettier": "^2.0.1",
-  "tslint-react": "^3.6.0"
-```
 
 > Directions:
 

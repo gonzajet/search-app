@@ -1,16 +1,10 @@
 # News search's app
 
-News search's app is an app created in React with CRA (create-react-app). This project includes the following technologies:
-
-* [React](https://reactjs.org/)
-* [TypeScript](https://www.typescriptlang.org/docs/)
-* [Axios](https://www.npmjs.com/package/axios)
-* [Bootstrap 4](https://react-bootstrap.github.io/)
-* [Formik](https://formik.org/docs/tutorial)
+# Getting started 🥳
 
 To install all the dependencies you must run:
 
-### `yarn` or `npm install`
+### `yarn install` or `npm install`
 
 ## Available Scripts
 
@@ -39,30 +33,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ## Configuration of the environment
-
-> Project Dependency Versions at the time 👇
-
-```json
-  "react": "^16.7.0",
-  "react-dom": "^16.7.0",
-  "react-scripts": "2.1.3",
-  "typescript": "^3.2.2"
-  "tslint": "^5.12.0",
-  "tslint-config-prettier": "^1.17.0",
-  "tslint-plugin-prettier": "^2.0.1",
-  "tslint-react": "^3.6.0"
-```
 
 > Directions:
 
@@ -95,4 +66,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React bootstrap component, check out the [React documentation](https://react-bootstrap.github.io/getting-started/introduction/).

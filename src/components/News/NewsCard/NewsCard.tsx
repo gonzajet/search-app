@@ -19,13 +19,13 @@ const NewsCard = (props: INewsCardProps) => {
       return <></>
     }
 
-    const notAvailableImageUrl: string =
+    const notAvailableImageURL: string =
       'http://www.staticwhich.co.uk/static/images/products/no-image/no-image-available.png'
 
     const imageSource =
       (image.thumbnail && image.thumbnail.length && image.thumbnail) ||
       (image.url && image.url.length && image.url) ||
-      notAvailableImageUrl
+      notAvailableImageURL
 
     const handleImageClick = (imageSourceUrl: string, thumbImageUrl: string): void => {
       setImageSourceUrl(imageSourceUrl)
@@ -45,7 +45,7 @@ const NewsCard = (props: INewsCardProps) => {
           variant="top"
           src={imageSource}
           onError={(event: React.SyntheticEvent<HTMLImageElement, Event>) =>
-            (event.currentTarget.src = notAvailableImageUrl)
+            (event.currentTarget.src = notAvailableImageURL)
           }
           onClick={() =>
             handleImageClick(

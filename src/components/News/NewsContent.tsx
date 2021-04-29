@@ -2,8 +2,7 @@ import React, { useCallback, useContext, useEffect, useState } from 'react'
 
 import { useFormik } from 'formik'
 import { Button, Col, Container, FormControl, InputGroup, Row, Spinner } from 'react-bootstrap'
-import { SearchServiceContext } from '../../services/context/SearchServiceContext'
-import { useToasts } from 'react-toast-notifications'
+import { ServiceContext } from '../../services/context/ServiceContext'
 import { NewsInformation, NewsInformationResponse } from './NewsInformation'
 
 import PaginateNews from './PaginateNews/PaginateNews'
@@ -47,10 +46,8 @@ const NewsContent: React.FC = () => {
   const [loading, setLoading] = useState(false)
   const [showPaginator, setShowPaginator] = useState(false)
 
-  const searchServiceContext = useContext(SearchServiceContext)
+  const searchServiceContext = useContext(ServiceContext)
   const actualPageSize: number = 6
-
-  const { addToast } = useToasts()
 
   const processSearchRequest = useCallback(
     (searchText: string) => {
@@ -70,16 +67,12 @@ const NewsContent: React.FC = () => {
           }
         },
         (err: any) => {
-          console.error(err)
           setLoading(false)
-          addToast(`Error obtaining news, please try again later.`, {
-            appearance: 'error',
-            autoDismiss: true,
-          })
+          throw err
         }
       )
     },
-    [addToast, page, actualPageSize, searchServiceContext]
+    [page, actualPageSize, searchServiceContext]
   )
 
   const formik = useFormik({
@@ -114,7 +107,7 @@ const NewsContent: React.FC = () => {
           }
         >
           <FormControl
-            id="searchBox"
+            id="searchText"
             placeholder="Filter here..."
             aria-label="Filter here..."
             aria-describedby="basic-addon2"
@@ -132,9 +125,7 @@ const NewsContent: React.FC = () => {
         </InputGroup>
 
         {formik.errors.searchText && (
-          <div className="text-danger d-flex justify-content-center mb-4">
-            {formik.errors.searchText}
-          </div>
+          <div className="d-flex text-danger my-3">{formik.errors.searchText}</div>
         )}
       </form>
 

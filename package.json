@@ -7,7 +7,7 @@
   },
   "version": "1.0",
   "repository": {
-    "url": "https://github.com/nbuzzi/news-search-app"
+    "url": "https://github.com/gonzajet/search-app"
   },
   "private": true,
   "scripts": {
@@ -54,6 +54,18 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }

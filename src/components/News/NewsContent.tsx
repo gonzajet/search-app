@@ -45,6 +45,8 @@ const NewsContent: React.FC = () => {
 
   const [loading, setLoading] = useState(false)
   const [showPaginator, setShowPaginator] = useState(false)
+  const [showErrorMessage, setShowErrorMessage] = useState(false)
+  const [errorText, setErrorText] = useState('')
 
   const searchServiceContext = useContext(ServiceContext)
   const actualPageSize: number = 6
@@ -60,14 +62,17 @@ const NewsContent: React.FC = () => {
       searchServiceContext.searchByQuery(searchText, page, actualPageSize).then(
         (response: NewsInformationResponse | undefined) => {
           setLoading(false)
+          setShowErrorMessage(false)
           if (response && response.value) {
             setNews(response.value || [])
             setShowPaginator(!response.value.length && page > 1)
             setTotalRowCount(Math.ceil(response.totalCount / actualPageSize))
           }
         },
-        (err: any) => {
+        (err) => {
           setLoading(false)
+          setShowErrorMessage(true)
+          setErrorText(err.toString())
           throw err
         }
       )
@@ -126,6 +131,9 @@ const NewsContent: React.FC = () => {
 
         {formik.errors.searchText && (
           <div className="d-flex text-danger mt-2 mb-3">{formik.errors.searchText}</div>
+        )}
+        {showErrorMessage && errorText !== '' && (
+          <div className="d-flex text-danger mt-2 mb-3">{errorText}</div>
         )}
       </form>
 

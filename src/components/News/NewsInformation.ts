@@ -1,41 +1,43 @@
-export interface NewsInformation {
-  id: string
-  title: string
-  url: string
-  body: string
-  datePublished: string
-  description: string
-  image: NewsInformationImage
-  keywords: string
-  language: string
-  provider: Provider
-}
-
 export interface NewsInformationResponse {
-  value: NewsInformation[]
   didUMean: string
   relatedSearch: NewsInformation[]
+  value: NewsInformation[]
   totalCount: number
   _type: string
 }
 
-export interface Provider {
-  name: string
-  favIcon: string
-  favIconBase64Encoding: string
+export interface NewsInformation {
+  body: string
+  datePublished: string
+  description: string
+  id: string
+  image: NewsInformationImage
+  isSafe: boolean
+  keywords: string
+  language: string
+  provider: Provider
+  snippet: string;
+  title: string
+  url: string
 }
 
 export interface NewsInformationImage {
-  thumbnailHeight: number
-  thumbnailWidth: number
-  title: string | null
-  url: string
+  base64Encoding: string
+  height: number
   imageWebSearchUrl: string | null
   name: string | null
   provider: Provider
   thumbnail: string
+  thumbnailHeight: number
+  thumbnailWidth: number
+  title: string | null
+  url: string
   webpageUrl: string
   width: number
-  base64Encoding: string
-  height: number
+}
+
+export interface Provider {
+  favIcon: string
+  favIconBase64Encoding: string
+  name: string
 }

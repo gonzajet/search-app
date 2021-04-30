@@ -5,7 +5,6 @@ import { NewsInformationResponse } from '../../components/News/NewsInformation'
 import { AxiosInstance } from 'axios'
 
 export interface IServiceContext {
-  children?: JSX.Element
   searchByQuery: (
     query: string,
     pageNumber: number,
@@ -41,7 +40,7 @@ export const ServiceContextProvider = (props: any) => {
    * @param pageSize
    * @param withThumbnails (optional) enable thumbnails
    */
-  const newsSearch = (
+  const makeSearch = (
     query: string,
     pageNumber: number,
     pageSize: number,
@@ -72,7 +71,7 @@ export const ServiceContextProvider = (props: any) => {
   }
 
   const searchServiceProviderValue: IServiceContext = {
-    searchByQuery: newsSearch,
+    searchByQuery: makeSearch,
   }
 
   return (

@@ -1,0 +1,22 @@
+.news {
+    form {
+        .input-group:not(.has-validation)>.form-control:not(:last-child) {
+            border-radius: 5px;
+            min-height: 40px;
+        }
+
+        .invalid-field {
+            input {
+                border-color: rgba(180, 15, 15, 0.452);
+
+                &:focus {
+                    box-shadow: 0 0 0 0.175rem rgba(235, 4, 4, 0.3);
+                }
+            }
+        }
+
+        button {
+            min-width: 110px;
+        }
+    }
+}

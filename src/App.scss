@@ -1,0 +1,30 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: #ffffff;
+    font-size: 14px;
+
+    .spinner {
+        width: 140px;
+        height: 140px;
+    }
+
+    img {
+        cursor: pointer;
+    }
+}
+
+p:focus,
+span:focus,
+button:focus,
+.form-control:focus {
+    outline: none;
+}
+
+html,
+body,
+#root,
+#root>div {
+    height: auto;
+    width: 100%;
+}

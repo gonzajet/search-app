@@ -22,7 +22,7 @@ const PaginateNews = (props: IPaginateNewsProps) => {
       })}
 
       {(!props.news || !props.news.length) && props.showPaginator && (
-        <span className="d-flex justify-content-center text-info mt-4 mb-5 w-100 blockquote">
+        <span className="d-flex justify-content-center mt-4 mb-5 w-100 blockquote">
           There're no news in the page.
         </span>
       )}

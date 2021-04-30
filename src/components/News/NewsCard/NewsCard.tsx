@@ -11,6 +11,7 @@ interface INewsCardProps {
 
 const NewsCard = (props: INewsCardProps) => {
   const [showImage, setShowImage] = useState(false)
+  
   const [imageSourceUrl, setImageSourceUrl] = useState('')
   const [thumbImageSourceUrl, setThumbImageSourceUrl] = useState('')
 
@@ -73,17 +74,17 @@ const NewsCard = (props: INewsCardProps) => {
 
   return (
     <>
-      {showImage && <Lightbox small={thumbImageSourceUrl} large={imageSourceUrl} className="cursor-default" alt="" onClose={() => setShowImage(false)} />}
+      {showImage && <Lightbox small={thumbImageSourceUrl} large={imageSourceUrl} alt="Couldn't load" onClose={() => setShowImage(false)} />}
       <Row lg={3} md={3} xs={3} className="custom-card px-2 pb-2">
         <Col>
           <Card>
             {createThumbnail(props.new.image)}
-            <Card.Body className="px-0 pb-0 overflow-hidden">
+            <Card.Body className="px-0 pb-0">
               <Card.Title>{props.new.title}</Card.Title>
-              <Card.Text className="overflow-hidden">{cardDescription(props.new.body)}</Card.Text>
+              <Card.Text>{cardDescription(props.new.body)}</Card.Text>
             </Card.Body>
             <Card.Footer>
-              <Card.Link className="read-more-link" href={props.new.url} target="_blank">
+              <Card.Link className="d-flex justify-content-end" href={props.new.url} target="_blank">
                 Read more...
               </Card.Link>
             </Card.Footer>

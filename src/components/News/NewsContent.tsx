@@ -17,9 +17,9 @@ const validate = (values: INewsContentProps) => {
   const errors: INewsContentProps = {}
 
   if (!values.searchText) {
-    errors.searchText = `Required`
+    errors.searchText = `Field required`
   } else if (values.searchText.length < 5) {
-    errors.searchText = `Search text must be 5 characters or less.`
+    errors.searchText = `Search text must be 5 characters or more.`
   }
 
   return errors

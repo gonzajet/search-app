@@ -1,5 +1,5 @@
 # News search's app
-![Alt Text](https://github.com/gonzajet/search-app/blob/dev/public/appGif_example.gif)
+![Alt Text](https://github.com/gonzajet/search-app/blob/main/public/appGif_example.gif)
 
 # Getting started 🥳
 To install all the dependencies you must run:

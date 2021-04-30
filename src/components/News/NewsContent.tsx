@@ -125,7 +125,7 @@ const NewsContent: React.FC = () => {
         </InputGroup>
 
         {formik.errors.searchText && (
-          <div className="d-flex text-danger my-3">{formik.errors.searchText}</div>
+          <div className="d-flex text-danger mt-2 mb-3">{formik.errors.searchText}</div>
         )}
       </form>
 

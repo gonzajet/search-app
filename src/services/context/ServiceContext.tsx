@@ -10,7 +10,7 @@ export interface IServiceContext {
     query: string,
     pageNumber: number,
     pageSize: number,
-    withThumbnails?: boolean,
+    withThumbnails?: boolean
   ) => Promise<NewsInformationResponse | undefined>
 }
 
@@ -19,15 +19,17 @@ interface IHeader {
   'x-rapidapi-host'?: string
 }
 
-export const ServiceContext: React.Context<IServiceContext> = React.createContext<IServiceContext>(undefined!)
+export const ServiceContext: React.Context<IServiceContext> = React.createContext<IServiceContext>(
+  undefined!
+)
 
 export const ServiceContextProvider = (props: any) => {
   const baseURL: string = `https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/`
-  const searchAPIText: string = `NewsSearchAPI`
   const headers: IHeader = {
     'x-rapidapi-key': 'e28105562fmsh01edebafeeb6117p1f37e7jsn0221a314ae3d',
     'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com',
   }
+  const searchAPIText: string = `NewsSearchAPI`
 
   const axiosInstance: AxiosInstance = axios.create({
     baseURL,
@@ -35,7 +37,7 @@ export const ServiceContextProvider = (props: any) => {
 
   /**
    * @param query
-   * @param pageNumber 
+   * @param pageNumber
    * @param pageSize
    * @param withThumbnails (optional) enable thumbnails
    */
@@ -57,10 +59,12 @@ export const ServiceContextProvider = (props: any) => {
           },
         })
         if (response.status === 200) {
-          return response.data
+          return Promise.resolve(response.data)
         }
+
+        return Promise.reject(response)
       } catch (error) {
-        console.error(error)
+        return Promise.reject(error)
       }
     }
 
